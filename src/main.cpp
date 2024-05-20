@@ -92,7 +92,7 @@ int main() {
     std::cout << "Request adapter ..." << std::endl;
     WGPURequestAdapterOptions adapter_options = {};
     adapter_options.nextInChain = nullptr;
-    adapter_options.compatibilityMode = surface;
+    adapter_options.compatibleSurface = surface;
     WGPUAdapter adapter = request_adapter(instance, &adapter_options);
     std::cout << "Got adapter: " << adapter << std::endl;
 
