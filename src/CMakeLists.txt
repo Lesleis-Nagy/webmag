@@ -1,4 +1,4 @@
-add_executable(webmag main.cpp)
+add_executable(webmag main.cpp webgpu-utils.cpp)
 
 set_target_warnings(webmag)
 
@@ -11,3 +11,6 @@ target_include_directories(webmag
 )
 
 target_copy_webgpu_binaries(webmag)
+
+set_target_properties(webmag
+        PROPERTIES VS_DEBUGGER_ENVIRONMENT "DAWN_DEBUG_BREAK_ON_ERROR=1")
